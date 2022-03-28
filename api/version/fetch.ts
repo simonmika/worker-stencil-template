@@ -7,6 +7,7 @@ async function fetch(request: http.Request, context: Context): Promise<http.Resp
 	const result: any = {
 		name: data.name,
 		version: data.version,
+		test: "q",
 	}
 	if ((await context.authenticate(request)) == "admin") {
 		result.environment = context.environment
@@ -15,4 +16,4 @@ async function fetch(request: http.Request, context: Context): Promise<http.Resp
 
 	return result
 }
-router.add("GET", "/version", fetch)
+router.add("GET", "/api/version", fetch)

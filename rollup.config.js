@@ -8,16 +8,17 @@ import typescript from "@rollup/plugin-typescript"
 import json from "@rollup/plugin-json"
 import path from "path"
 
-export default {
-  input: "index.ts",
-  output: {
-    exports: "named",
-    format: "es",
-    file: "dist/index.mjs",
-    sourcemap: true,
-		sourcemapPathTransform: (relativeSourcePath, sourcemapPath) => {
-			return path.resolve(__dirname, relativeSourcePath.replace(/^(..\/)+/, ""))
-		}
-  },
-  plugins: [commonjs(), nodeResolve({ browser: true }), terser(), typescript({ resolveJsonModule: true }), json()],
-}
+export default [{
+		input: "api/index.ts",
+		output: {
+			exports: "named",
+			format: "es",
+			file: "dist/api/index.mjs",
+			sourcemap: true,
+			sourcemapPathTransform: (relativeSourcePath, sourcemapPath) => {
+				return path.resolve(__dirname, relativeSourcePath.replace(/^(..\/)+/, ""))
+			}
+		},
+		plugins: [commonjs(), nodeResolve({ browser: true }), terser(), typescript({ tsconfig: "./tsconfig.json" }), json()],
+	},
+]
