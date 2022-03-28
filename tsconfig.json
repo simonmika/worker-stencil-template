@@ -4,8 +4,9 @@
     "module": "es2015",
     "target": "es2019",
     "lib": ["es2019", "webworker"],
-    "alwaysStrict": true,
-    "strict": true,
+    // "alwaysStrict": true,
+		"experimentalDecorators": false,
+    // "strict": true,
     "preserveConstEnums": true,
     "moduleResolution": "node",
     "sourceMap": true,
@@ -13,10 +14,8 @@
     "types": ["@cloudflare/workers-types", "node"],
 		"resolveJsonModule": true
   },
-  "include": [
-    "*.ts",
-    "**/*.ts",
-    "./node_modules/@cloudflare/workers-types/index.d.ts"
+	"include": [
+    "api/**/*.ts"
   ],
   "exclude": ["*.spec.ts", "**/*.spec.ts", "node_modules/", "dist/"]
 }
