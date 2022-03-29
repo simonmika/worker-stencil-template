@@ -53,8 +53,9 @@
     "deploy": "wrangler login && wrangler publish; wrangler logout",
     "login": "wrangler login",
     "start": "wrangler dev rollup--env development",
-    "start:local": "rollup -c --watch & miniflare dist/api/index.mjs --watch --live-reload -B \"\" && kill $!",
-		"start:ui": "stencil build --dev"
+    "start:api": "rollup -c --watch & miniflare dist/api/index.mjs --watch --live-reload -B \"\" && kill $!",
+		"start:ui": "stencil build --dev --watch --serve",
+		"start:all": "npm run start:api & npm run start:ui && kill $!"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.3.1",
