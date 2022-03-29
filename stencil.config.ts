@@ -4,10 +4,11 @@ import { Config } from "@stencil/core"
 
 export const config: Config = {
 	globalStyle: "ui/src/global/app.css",
-	// globalScript: "ui/src/global/app.ts",
+	globalScript: "ui/src/global/app.ts",
 	taskQueue: "async",
 	srcDir: "ui/src",
 	tsconfig: "tsconfig.ui.json",
+	sourceMap: true,
 	outputTargets: [
 		{
 			type: "www",

@@ -1,12 +1,20 @@
 {
 	"configurations": [
 		{
-			"name": "Miniflare (npm)",
+			"name": "Miniflare (api only)",
 			"type": "node",
 			"request": "launch",
 			"runtimeExecutable": "npm",
-			"runtimeArgs": ["run", "start:local"], 
+			"runtimeArgs": ["run", "start:api"], 
 			"skipFiles": ["<node_internals>/**"]
-		}
+		},
+    {
+			"name": "Miniflare (api and ui)",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "start:all"], 
+			"skipFiles": ["<node_internals>/**"]
+		},
 	]
 }

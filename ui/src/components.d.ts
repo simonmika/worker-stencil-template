@@ -6,47 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface StopWatch {
-    }
-    interface TimerDisplay {
-        "time": number;
+    interface ApiVersion {
     }
 }
 declare global {
-    interface HTMLStopWatchElement extends Components.StopWatch, HTMLStencilElement {
+    interface HTMLApiVersionElement extends Components.ApiVersion, HTMLStencilElement {
     }
-    var HTMLStopWatchElement: {
-        prototype: HTMLStopWatchElement;
-        new (): HTMLStopWatchElement;
-    };
-    interface HTMLTimerDisplayElement extends Components.TimerDisplay, HTMLStencilElement {
-    }
-    var HTMLTimerDisplayElement: {
-        prototype: HTMLTimerDisplayElement;
-        new (): HTMLTimerDisplayElement;
+    var HTMLApiVersionElement: {
+        prototype: HTMLApiVersionElement;
+        new (): HTMLApiVersionElement;
     };
     interface HTMLElementTagNameMap {
-        "stop-watch": HTMLStopWatchElement;
-        "timer-display": HTMLTimerDisplayElement;
+        "api-version": HTMLApiVersionElement;
     }
 }
 declare namespace LocalJSX {
-    interface StopWatch {
-    }
-    interface TimerDisplay {
-        "time": number;
+    interface ApiVersion {
     }
     interface IntrinsicElements {
-        "stop-watch": StopWatch;
-        "timer-display": TimerDisplay;
+        "api-version": ApiVersion;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "stop-watch": LocalJSX.StopWatch & JSXBase.HTMLAttributes<HTMLStopWatchElement>;
-            "timer-display": LocalJSX.TimerDisplay & JSXBase.HTMLAttributes<HTMLTimerDisplayElement>;
+            "api-version": LocalJSX.ApiVersion & JSXBase.HTMLAttributes<HTMLApiVersionElement>;
         }
     }
 }
