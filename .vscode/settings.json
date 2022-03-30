@@ -10,7 +10,8 @@
 		"node_modules": true,
 		"*.code-workspace": true,
 		"*.config.js": true,
-		"*.toml": true
+		"*.toml": true,
+    "stencil.config.ts": true,
 	},
 	"editor.tabSize": 2,
 	"editor.detectIndentation": false,
@@ -35,5 +36,6 @@
 		"persistly",
 		"servly",
 		"uply"
-	]
+	],
+  "debug.javascript.autoAttachFilter": "onlyWithFlag"
 }

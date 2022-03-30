@@ -53,8 +53,8 @@
     "deploy": "wrangler login && wrangler publish; wrangler logout",
     "login": "wrangler login",
     "start": "wrangler dev rollup--env development",
-    "start:api": "rollup -c --watch & miniflare dist/api/index.mjs --watch --live-reload -B \"\" && kill $!",
-		"start:ui": "stencil build --dev --watch --serve",
+    "start:api": "rollup -c --watch & node --experimental-vm-modules --inspect ./node_modules/miniflare/dist/src/cli.js dist/api/index.mjs --watch --live-reload -B \"\" && kill $!",
+		"start:ui": "stencil build --dev --serve --watch",
 		"start:all": "npm run start:api & npm run start:ui && kill $!"
   },
   "devDependencies": {
