@@ -15,7 +15,7 @@
 	},
 	"editor.tabSize": 2,
 	"editor.detectIndentation": false,
-	"editor.insertSpaces": true,
+	"editor.insertSpaces": false,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true,
 		"eslint.autoFixOnSave": true,
