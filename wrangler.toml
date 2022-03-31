@@ -11,6 +11,7 @@ vars = { }
 command = "npm install && npm run build"
 [build.upload]
 format = "modules"
+dir = "dist"
 main = "./index.mjs"
 
 [env.development]
@@ -19,3 +20,12 @@ main = "./index.mjs"
 	vars = {  }
 [dev]
 	port = 8999
+
+[durable_objects]
+bindings = [
+	{ name = "", class_name = "" },
+]
+
+[miniflare]
+durable_objects_persist = "./miniflare/durable-objects/"
+kv_persist = "./miniflare/kv/"
